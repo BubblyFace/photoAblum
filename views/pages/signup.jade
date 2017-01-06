@@ -1,0 +1,45 @@
+extend ../layout
+block content
+	include ../components/nav
+	include ../components/nav-setting
+	include ../components/notification
+	.container-fluid.center.mainContenter
+		.post-content.signupForm
+			.container.logo.center
+				.Title
+					h1 SignUp
+			form(role='form' method='post' enctype="multipart/form-data")
+				.form-group
+					label(for='userName') Username:
+					input#sign_userName.form-control.signupForm-input(type='text' placeholder='Input your nickname!' name='username')
+				.form-group
+					label(for='Password') Password:
+					input#sign_passWord.form-control.signupForm-input(type='password' placeholder='Input your password' name='password')
+				.form-group
+					label(for='Password') Repassword:
+					input#sign_repassWord.form-control.signupForm-input(type='password' placeholder='Input your password again' name='repassword')
+				.form-group
+					label(for='email') Email:
+					input#sign_email.form-control.signupForm-input(type='email' placeholder='Input your Email' name='email')
+				.form-group.radioSelf
+					label
+						input#sex_m(type='radio' name="gender" value='m')
+						| Male
+					label.radio-inline
+						input#sex_f(type='radio' name="gender" value='f')
+						| Female
+					label.radio-inline
+						input#sex_x(type='radio' name="gender" value='x')
+						| X
+				.form-group
+					label(for='avatar')
+					| Avatar Upload
+					input#sign_avatar(type='file' name = 'avatar')
+					p Upload a Pic as Your Avatar!
+				.form-group
+					label(for='bio')
+					| Self-introduce
+					textarea.signupForm-input.form-control(rows=3 name='bio')
+				button.btn.btn-default(type='submit') Submit
+	include ../components/footer
+

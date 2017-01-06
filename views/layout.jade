@@ -1,8 +1,9 @@
-doctype html
+doctype
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/jquery.js')
-  body
-    block content
+	head
+		meta(charset="utf-8")
+		title #{title}
+		include ./includes/head
+	body
+		include ./includes/header
+			block content

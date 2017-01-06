@@ -1,0 +1,18 @@
+.nav-sitting
+	.btn-group
+		button.btn.btn-info.dropdown-toggle(type='button' data-toggle="dropdown")
+			span.glyphicon.glyphicon-align-justify
+		ul.dropdown-menu.self_dropdown_sitting(role='menu')
+			if user
+				li
+					a(href='/ablums') 个人主页
+				li
+					a(href='/signout') 登出
+			else
+				li
+					a(href='/signup') 注册
+				li
+					a(href='/signin') 登录
+				li.divider
+				li
+					a(href='/inf') 网站介绍

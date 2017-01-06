@@ -1,0 +1,143 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    |     
+    title index
+    |     
+    link(rel='stylesheet', type='text/css', href='../public/stylesheets/bootstrap.css')
+    |     
+    link(rel='stylesheet', type='text/css', href='../public/stylesheets/style.css')
+    |     
+    link(rel='stylesheet', type='text/css', href='../public/stylesheets/font-awesome.min.css')
+    |     
+    script(type='text/javascript', src='../public/javascripts/jquery.js')
+    |     
+    script(type='text/javascript', src='../public/javascripts/velocity.min.js')
+    |     
+    script(type='text/javascript', src='../public/javascripts/bootstrap.min.js')
+    |     
+    script(type='text/javascript', src='../public/javascripts/index.js')
+  body
+    nav.navbar.navbar-inverse.navbar_my(role='navigation')
+      .container-fluid
+        .navbar-header.navbar_my
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+          |                 
+          a.navbar-brand(href='#')
+            img(alt='Brand', src='../public/images/卖萌.png')
+        |             
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') Link
+            |                     
+            li
+              a(href='#') Link
+            |                     
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Dropdown 
+                span.caret
+              |                         
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='#') Action
+                |                             
+                li
+                  a(href='#') Another action
+                |                             
+                li
+                  a(href='#') Something else here
+                |                             
+                li.divider
+                |                             
+                li
+                  a(href='#') Separated link
+                |                             
+                li.divider
+                |                             
+                li
+                  a(href='#') One more separated link
+          |                 
+          form.navbar-form.navbar-left(role='search')
+            .form-group
+              input.form-control(type='text', placeholder='Search')
+            |                     
+            button.btn.btn-default(type='submit') Submit
+          |                 
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='#') Link
+            |                     
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Dropdown 
+                span.caret
+              |                         
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='#') Action
+                |                             
+                li
+                  a(href='#') Another action
+                |                             
+                li
+                  a(href='#') Something else here
+                |                             
+                li.divider
+                |                             
+                li
+                  a(href='#') Separated link
+        // /.navbar-collapse
+    |     
+    .main.container-fluid
+      .sidebar.sidebarmain.sidebarhover
+        ul.sidebar
+          li.sidebar
+            a(href='#')
+              span example
+          |                 
+          li.sidebar
+            a(href='#')
+              span example
+          |                 
+          li.sidebar
+            a(href='#')
+              span example
+          |                 
+          li.sidebar
+            a(href='#')
+              span example
+          |                 
+          li.sidebar
+            a(href='#')
+              span example
+          |                 
+          li.sidebar
+            a(href='#')
+              span example
+      |         
+      .sidebarIcon
+        .icon.sidebarhover
+          i.fa.fa-angle-right(aria-hidden='true')
+      |         
+      .container.main-area
+        .row.row-1
+          .col-xs-5.col-sm-5.col-md-5.col-lg-5
+          |                 
+          .testMargin.col-xs-5.col-sm-5.col-md-5.col-lg-5.col-md-offset-2.col-lg-offset-2.col-sm-offset-1.col-xs-offset-1
+        |             
+        .row.row-2
+        |             
+        .row.row-3
+        |             
+        .row.row-4
+    // 侧边栏

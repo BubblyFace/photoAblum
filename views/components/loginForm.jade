@@ -1,0 +1,43 @@
+.container-fluid.center.mainContenter
+	.post-content.loginForm
+		.container.logo.center
+			.Title
+				h1 SignIn
+		form(role='form')
+			.form-group
+				label(for='userName') UserName:
+				input#login_userName.form-control.loginForm-input(type='text' placeholder='Input Your Name!')
+			.form-group
+				label(for='userPassword') Password
+				input#login_userPassword.form-control.loginForm-input(type='password' placeholder='Input Your Password!')
+			.checkbox
+				label(for='Remeberme') 
+					input(type='checkbox')
+					| Remeberme
+			button.btn.btn-default(type='submit') Submit
+
+		//- form(role='form')
+		//- 	.form-group
+		//- 		label(for='exampleInputEmail1') Email address
+		//- 		|         
+		//- 		input#exampleInputEmail1.form-control(type='email', placeholder='Enter email')
+		//- 	|     
+		//- 	.form-group
+		//- 		label(for='exampleInputPassword1') Password
+		//- 		|         
+		//- 		input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+		//- 	|     
+		//- 	.form-group
+		//- 		label(for='exampleInputFile') File input
+		//- 		|         
+		//- 		input#exampleInputFile(type='file')
+		//- 		|         
+		//- 		p.help-block Example block-level help text here.
+		//- 	|     
+		//- 	.checkbox
+		//- 		label
+		//- 			input(type='checkbox')
+		//- 			|  Check me out
+		//- 	|     
+		//- 	button.btn.btn-default(type='submit') Submit
+

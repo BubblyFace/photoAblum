@@ -1,0 +1,8 @@
+extend ../layout
+block content
+	include ../components/nav
+	include ../components/nav-setting
+	include ../components/notification
+	h2 #{error.message}
+	p #{error.stack}
+	include ../components/footer

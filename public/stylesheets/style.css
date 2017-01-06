@@ -1,8 +1,99 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*全局定义*/
+
+html {
+    height: 100%;
+    margin: 0;
 }
 
-a {
-  color: #00B7FF;
+body {
+    background: #7B99FA;
+    height: 100%;
+    margin: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+    color: #00B7FF;
+}
+
+.Title>h1{
+    margin-top: 10px;
+}
+/* flexbox居中布局 */
+
+.center {
+    height: 88.2%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.mainContenter{
+
+}
+
+/*导航栏*/
+
+.navbar {
+    position: relative;
+    background-color: #425E92;
+    border: #7B99FA;
+}
+
+.nav-sitting {
+    position: fixed;
+    z-index: 999;
+    left: 5px;
+    top: 5px;
+}
+
+.logo {
+    background: #222 height: 100%;
+    width: auto;
+}
+
+.logo>img {
+    position: relative;
+    left: 50%;
+}
+
+
+/*提交表单*/
+
+.post-content {
+    border: 2px solid #444;
+    border-radius: 10px;
+}
+
+.loginForm,.signupForm {
+    padding: 4px;
+    width: 50%;
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    height: 60px;
+    border-bottom: 1px solid #333;
+    border-radius: 10px;
+}
+
+.loginForm,.signup>form {
+    margin: 10px
+}
+
+.loginForm-input,.signupForm-input {
+    background: #222;
+}
+
+.loginForm-input,.signupForm-input:hover {
+    background: #333;
+    color: #aaa;
+}
+
+.radioSelf{
+
 }

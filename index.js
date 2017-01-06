@@ -8,48 +8,67 @@ var config = require('config-lite');
 var routes = require('./routes/index');
 var pkg = require('./package');
 var app = express();
-
+var fortune = require('./public/javascripts/cookiesTest')
+var weatherPart = require('./public/javascripts/weatherPart')
 app.set('port', process.env.PORT || 3000)
-    // app.set('views', path.join(__dirname, 'views'));
-    // app.set('view engine', 'jade');
-    // 设置 handlebars 视图引擎
-var handlebars = require('express3-handlebars')
-    .create({ defaultLayout: 'main' });
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views/pages'));
+app.set('view engine', 'jade');
+
+// var handlebars = require('express3-handlebars')
+//     .create({ defaultLayout: 'main' });
+// app.engine('handlebars', handlebars.engine);
+// app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-app.get('/', function(req, res) {
-    res.render('home')
-});
-
-app.get('/about', function(req, res) {
-    var binggan = require('/Users/haoweisun/Desktop/work/项目设计/photoAblum/public/javascripts/cookiesTest');
-    console.log(binggan.text);
-    bingganText = binggan.text.toString();
-    res.render('about', {
-        binggan: bingganText,
-        name: "sunhaowei"
+app.use(require('body-parser')())
+    //创建一个中间件来返回数据对象
+app.use(session({
+    name: config.session.key,
+    secret: config.session.secret,
+    cookie: { maxAge: config.session.maxAge },
+    store: new MongoStore({
+        url: config.mongodb
     })
+}))
+
+app.use(flash())
+
+//处理表单和文件的中间件
+app.use(require('express-formidable')({
+    uploadDir: path.join(__dirname, 'public/images/avatar'), //上传头像的目录
+    keepExtensions: true //保留图片后缀
+}))
+
+//模版全局变量
+app.locals.ablum = {
+    title: pkg.name,
+    description: pkg.description
+};
+
+app.use(function(req, res, next) {
+    res.locals.user = req.session.user;
+    res.locals.success = req.flash('success').toString();
+    res.locals.error = req.flash('error').toString();
+    next();
 })
 
-app.get('/about/1', function(req, res) {
+routes(app);
 
-})
+// app.use(function(req, res) {
+//     res.status(404);
+//     res.render('404')
+// })
 
-
-app.use(function(req, res) {
-    res.status(404);
-    res.render('404')
-})
+// app.use(function(err, req, res, next) {
+//     res.status(500);
+//     res.render('500')
+// })
 
 app.use(function(err, req, res, next) {
-    console.log(err)
-    res.status(500);
-    res.render('500')
-})
+    res.render('error', {
+        error: err
+    });
+});
 
 app.listen(app.get('port'), function() {
     console.log('Express started on http://localhost: ' + app.get('port') + '; press Ctrl-C to terminate.');
