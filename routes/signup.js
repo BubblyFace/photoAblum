@@ -11,6 +11,10 @@ router.get('/', checkNotLogin, function(req, res, next) {
     res.render('signup')
 })
 
+router.post('/a',function(req,res,next){
+    console.log('POST METHOD CAN BE RECEIVED')
+})
+
 //post 用户注册
 router.post('/', checkNotLogin, function(req, res, next) {
     var name = req.fields.username;

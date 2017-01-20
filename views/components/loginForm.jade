@@ -3,13 +3,13 @@
 		.container.logo.center
 			.Title
 				h1 SignIn
-		form(role='form')
+		form(role='form' method='post' url='/a')
 			.form-group
 				label(for='userName') UserName:
-				input#login_userName.form-control.loginForm-input(type='text' placeholder='Input Your Name!')
+				input#login_userName.form-control.loginForm-input(type='text' placeholder='Input Your Name!' name = 'username')
 			.form-group
 				label(for='userPassword') Password
-				input#login_userPassword.form-control.loginForm-input(type='password' placeholder='Input Your Password!')
+				input#login_userPassword.form-control.loginForm-input(type='password' placeholder='Input Your Password!' name = 'password')
 			.checkbox
 				label(for='Remeberme') 
 					input(type='checkbox')
