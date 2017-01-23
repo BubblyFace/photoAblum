@@ -1,2 +1,2 @@
 <h1>photoablums</h1>
-<p> Start a new project that could let anyone local there photos</p>
+<p>start a new branch</p>
